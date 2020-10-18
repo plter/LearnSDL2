@@ -45,7 +45,6 @@ int main() {
     }
 
     while (1) {
-        SDL_RenderClear(renderer);
         draw(renderer);
         SDL_RenderPresent(renderer);
 
