@@ -3,21 +3,10 @@
 #define WIDTH 550
 #define HEIGHT 400
 
-void drawBackground(SDL_Renderer *renderer) {
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_Rect rect = {0, 0, WIDTH, HEIGHT};
-    SDL_RenderFillRect(renderer, &rect);
-}
-
-void drawRedRect(struct SDL_Renderer *renderer) {
+void draw(SDL_Renderer *renderer) {
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     SDL_Rect rect = {0, 0, 100, 100};
     SDL_RenderFillRect(renderer, &rect);
-}
-
-void draw(SDL_Renderer *renderer) {
-    drawBackground(renderer);
-    drawRedRect(renderer);
 }
 
 int main() {
@@ -45,6 +34,8 @@ int main() {
     }
 
     while (1) {
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderClear(renderer);
         draw(renderer);
         SDL_RenderPresent(renderer);
 
