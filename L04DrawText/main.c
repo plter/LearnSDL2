@@ -9,15 +9,7 @@
 
 SDL_Texture *text;
 
-void drawBackground(SDL_Renderer *renderer) {
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_Rect rect = {0, 0, WIDTH, HEIGHT};
-    SDL_RenderFillRect(renderer, &rect);
-}
-
 void draw(SDL_Renderer *renderer) {
-    drawBackground(renderer);
-
     SDL_Rect r;
     SDL_QueryTexture(text, NULL, NULL, &r.w, &r.h);
     r.x = (WIDTH - r.w) / 2;
@@ -80,6 +72,7 @@ int main() {
     }
 
     while (1) {
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderClear(renderer);
         draw(renderer);
         SDL_RenderPresent(renderer);
