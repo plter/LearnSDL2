@@ -6,8 +6,6 @@
 #ifndef L05MOVEPOINTS_MAIN_H
 #define L05MOVEPOINTS_MAIN_H
 
-void drawBackground(SDL_Renderer *renderer);
-
 void draw(SDL_Renderer *renderer);
 
 void createGPoints();

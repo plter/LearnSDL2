@@ -38,6 +38,7 @@ int main() {
 
     while (true) {
         Uint32 renderStartTicks = SDL_GetTicks();
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderClear(renderer);
         draw(renderer);
         SDL_RenderPresent(renderer);
@@ -80,15 +81,7 @@ void createGPoints() {
     }
 }
 
-void drawBackground(SDL_Renderer *renderer) {
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_Rect rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
-    SDL_RenderFillRect(renderer, &rect);
-}
-
 void draw(SDL_Renderer *renderer) {
-    drawBackground(renderer);
-
     SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
 
     for (int i = 0; i < POINT_COUNT; ++i) {
