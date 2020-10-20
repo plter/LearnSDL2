@@ -2,13 +2,14 @@
 #include <cairo.h>
 
 
+#define FONT_SIZE 50
+
 void draw(cairo_surface_t *cairosurf) {
     cairo_t *cr = cairo_create(cairosurf);
 
-    cairo_set_source_rgb(cr, 1, 0, 0);
-    cairo_arc(cr, 100, 100, 50, 0, M_PI * 2);
-    cairo_fill(cr);
-    cairo_surface_flush(cairosurf);
+    cairo_set_font_size(cr, FONT_SIZE);
+    cairo_move_to(cr, 0, FONT_SIZE);
+    cairo_show_text(cr, "Hello Cairo");
 
     cairo_destroy(cr);
 }
