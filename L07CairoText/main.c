@@ -6,7 +6,11 @@
 
 void draw(cairo_surface_t *cairosurf) {
     cairo_t *cr = cairo_create(cairosurf);
-
+    cairo_select_font_face(
+            cr, "Sans",
+            CAIRO_FONT_SLANT_NORMAL,
+            CAIRO_FONT_WEIGHT_NORMAL
+    );
     cairo_set_font_size(cr, FONT_SIZE);
     cairo_move_to(cr, 0, FONT_SIZE);
     cairo_show_text(cr, "Hello Cairo");

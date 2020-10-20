@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(L07CairoCircle)
+project(L07CairoText)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -19,4 +19,4 @@ link_libraries(
         cairo
 )
 
-add_executable(L07CairoCircle main.c)
+add_executable(L07CairoText main.c)
