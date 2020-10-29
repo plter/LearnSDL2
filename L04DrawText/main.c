@@ -24,7 +24,7 @@ struct SDL_Texture *createText(SDL_Renderer *renderer) {
         return NULL;
     }
     SDL_Color c = {0, 0, 0};
-    SDL_Surface *surface = TTF_RenderText_Blended(font, WORDS, c);
+    SDL_Surface *surface = TTF_RenderUTF8_Blended(font, WORDS, c);
     if (surface == NULL) {
         SDL_Log("Can not create surface for text");
         return NULL;
